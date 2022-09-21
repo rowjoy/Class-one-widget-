@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 
+import 'package:class_one/home_screen.dart';
 import 'package:flutter/material.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -56,25 +57,30 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 15,),
                     SizedBox(
                       width: MediaQuery.of(context).size.width,
                       height: 45,
                       child: Padding(
                         padding: const EdgeInsets.only(left: 15,right: 15),
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.red,
-                            elevation: 10,
-                          ),
-                          onPressed: (){
-      
-                          },
-                          child:  const Text("Save",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
+                        child: Tooltip (
+                          message: "Next Page",
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.red,
+                              elevation: 10,
+                            ),
+                            onPressed: (){
+                              // Navigator.push(context,
+                              //   MaterialPageRoute(builder: (context) => CLassTwo()),
+                              // );
+                               Navigator.push(context,  MaterialPageRoute(builder: (context)=> CLassTwo()));
+                            },
+                            child: Text("Next page",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              ),
                             ),
                           ),
                         ),
